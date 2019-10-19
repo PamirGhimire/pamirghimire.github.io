@@ -18,3 +18,12 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "post"
+      values:
+        layout: "post"
+        title: "My Title"
