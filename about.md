@@ -4,12 +4,14 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I am Pamir, an engineer interested in computer vision, robotics and 
+software development. 
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+I am fascinated with modern technology. I think computers and the internet, along with open-source software (like Linux) are the greatest tools that my generation has (and are completely awesome).
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+I also maintain an interest in climate change, demographics, and supply chains. 
+
+Write to me if you'd like to reach out. Cheers, 
+
+![Fall in Munich, 2019](/assets/muc_oct_2019.jpg){:class="img-responsive"}
+Colors of the fall at Olympic park, Munich (Oct, 2019) 
