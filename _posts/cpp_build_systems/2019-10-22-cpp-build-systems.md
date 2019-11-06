@@ -48,4 +48,51 @@ faster for large projects (with thousands of C files). If you program in python,
 for example, in [this video](https://www.youtube.com/watch?v=tkXsSB0t7PU){:target="_blank"} since it might make the whole build 
 process quite transparent for you.  
 
+<!-- build systems help you manage non out-of-source builds (using remote artifacts) -->
+Using a build system, you can also depend on code outside of your local repository for building your targets (executables, libraries, ...). For example, in Bazel, you can define using http_archive in your WORKSPACE a cloud-hosted repo as a target that other local targets can depend on. For example : 
 
+In your WORKSPACE file : <br>
+http_archive(
+    name = "googletest",
+    path = "googletest-release-x.y.z.tar.gz",
+    repo = "https://url-of-google-test",
+    sha256 = "some-unique-sha",
+    strip_prefix = "googletest-release-a.b.c",
+)
+
+<br>
+
+And then in one of your local BUILD files : <br>
+cc_test(
+    name = "your_very_important_test",
+    srcs = glob([
+        "test/*.cpp",
+        "test/*.h",
+    ]),
+
+    deps = [
+        ":your-local-library-to-be-tested",
+        "@googletest//:gtest",
+        "@googletest//:gtest_main",
+    ],
+)
+
+
+Similarly, in CMake, you can do the following : 
+if(YOUR_PROJECT_NAME_BUILD_BOOST)
+    set(BOOST_TARGET boost)
+    ExternalProject_Add(${BOOST_TARGET}
+            URL https://url/to/boost/tar/boost_1_61_0.tar.gz
+            PREFIX ${BUILD_DIR}
+            BUILD_IN_SOURCE 0
+            BUILD_ALWAYS 0
+            SOURCE_DIR ${CMAKE_CURRENT_BINARY_DIR}/boost
+            BINARY_DIR ${BUILD_DIR}/boost_build
+            INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+            CONFIGURE_COMMAND cd <SOURCE_DIR> && ./bootstrap.${SCRIPT_EXTENSION} --prefix=<INSTALL_DIR> --with-libraries=atomic,container,date_time,exception,filesystem,graph,iostreams,log,math,program_options,regex,serialization,system,test,thread
+            BUILD_COMMAND cd <SOURCE_DIR> && ./b2 --prefix=<INSTALL_DIR> variant=${CMAKE_BUILD_TYPE_LOWERCASE} link=shared threading=multi -j8
+            INSTALL_COMMAND cd <SOURCE_DIR> && ./b2 variant=${CMAKE_BUILD_TYPE_LOWERCASE} link=shared threading=multi install
+            DEPENDS ${ZLIB_TARGET}
+            )
+    set(BOOST_CMAKE_FLAGS -DBOOST_ROOT=${CMAKE_INSTALL_PREFIX})
+endif()
