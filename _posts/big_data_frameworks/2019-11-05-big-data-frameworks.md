@@ -14,7 +14,30 @@ Big data is characterized by [3 Vs.](https://www.oracle.com/big-data/guide/what-
 
 Some examples from famous companies (2019) : 
 <br>Amazon : 
+```
+User data:
+    Customer purchasing behavior data
+    Purchasing history
+    Click streams
+    Customer reviews
+    Customer address
+    Customer credit card data
+Organisational data:
+    Inventory of 1.5B items in its warehouses
+```
+
 <br>Facebook : 
+<!-- uses 'a massive installation of' hadoop! -->
+```
+User data:
+    User activity : likes, shares, comments, posts
+    User profile : photos, bio, ...
+    User web activity : websites you visit, etc. (through cookies, ...) 
+
+Organisational data:
+    
+```
+
 <br>Microsot : 
 <br>YouTube : 
 <br>Netflix : 
