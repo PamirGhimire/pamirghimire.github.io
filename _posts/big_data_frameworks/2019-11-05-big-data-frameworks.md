@@ -38,7 +38,14 @@ Organisational data:
     
 ```
 
-<br>Microsot : 
+<br>Microsoft : 
+```
+User data:
+    User activity : Action History
+
+```
+References : [Action History](https://www.extremetech.com/computing/282263-microsoft-windows-10-data-collection)
+
 <br>YouTube : 
 <br>Netflix : 
 <br>Proctor and Gamble: 
