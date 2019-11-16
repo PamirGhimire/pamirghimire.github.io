@@ -47,13 +47,12 @@ Development work included custom shader development for volume rendering, wirele
 ​
 <hr><br>
 
-<h2>Experiments With Deep-Learning Using Tensorflow</h2>
+<h2>Learning Local Descriptors for ComparingRenders with Real Images (MSc Thesis)</h2>
 ![DeepLearningTF](/assets/projects_portfolio/deepLearningDemo.png){:class="img-responsive"}
-Blog-style code posts I worked on with the intention of learning about deep learning using Tensorflow.
-​
-In these posts, I tried to create and illustrate the kinds of examples I would have liked to look at in order to learn deep learning using Tensorflow, but could not find on the web.  I also tried to work with datasets that are not the norm on the web in the context of learning about Tensorflow. 
 
-[> Code Blog-posts](https://sites.google.com/site/visionindx/my-projects/tensorflow/tf4_convnetoncifar){:target="_blank"}<br>
+<b>Abstract</b> :  We present a method to train a deep network based feature descriptor to extract discriminative local descriptions fromrenders and corresponding real images with similar viewpoints and geometry. The work was done in context of inspection ofmechanical assemblies for which 3D CAD models and approximate poses of the inspection camera were available. The descriptor was trained to best capture geometric features and stay invariant to image domain and rotation. Patch pairs for training the descriptor were extracted in a semi-supervised manner from a small dataset of less than 100 real images and corresponding renders with similar viewpoints which were manually registered to the real images. Due to the small size of training dataset, the descriptor network was initialized with weights from classification training on ImageNet. A 2 step training was proposed for addressing the problem of domain shift. The first step,termed ’bootstrapping’, was a classification training to obtain good initial weights for second training step, the triplet-loss training, that provided weights for extracting discriminative embeddings that could be compared using l2-distance. The FPR95 score for the best descriptor was 13.8. ROC curves were plotted for comparing descriptors trained with different configurations. The descriptor was explored for comparing renders and real images through 2 approaches, first finding local correspondences between them through nearest neighbor matching of descriptors computed at FAST interest points, and second comparing crops of real images and renders by representing them as histograms based on Bag of Visual Words of the learned features. We observed that learning robust cross-domain rotation invariant descriptors is feasible, even with a small dataset, and such features may be of interest for various industrial applications like CAD based visual inspection, tracking, and finely registered augmented reality. To the best of our knowledge,this is the first work that reports learning local descriptors for comparing renders with real images
+
+[> MSc Thesis : ](https://sites.google.com/site/visionindx/my-projects/tensorflow/tf4_convnetoncifar){:target="_blank"}<br>
 
 <hr><br>
 
