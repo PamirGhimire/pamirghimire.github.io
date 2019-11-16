@@ -21,7 +21,7 @@ Implemented image-points-based and pose-based visual servoing on Turtlebot 2 pla
 Pose based approach was implemented using a QR tag whose pose was automatically estimated in robot’s frame (using ViSP Autotracker).
 The points-based approach required the user to manually select 4 centers in a known printed pattern of filled dots (blobs).
 ​
-The visual servoing (fine positioning) task was also automatically coordinated with a navigation task using a Multi-master setup in ROS.
+The visual servoing (fine positioning) task automatically followed after the completion of a map-based navigation task using a Multi-master setup in ROS.
 
 [> Project Repo : GitHub](https://github.com/PamirGhimire/visualServoing_ROSProject){:target="_blank"}<br>
 [> Video: Gazebo Demo](https://www.youtube.com/watch?v=qCdgKvE52iY){:target="_blank"}<br>
@@ -33,7 +33,7 @@ The visual servoing (fine positioning) task was also automatically coordinated w
 
 <h2>Hololens for Teaching Radiation Safety in Hybrid Operating Room</h2>
 ![Hololens](/assets/projects_portfolio/hololens.png){:class="img-responsive"}
-I developed a set of apps for Microsoft Hololens during a 3 months internship at research group CAMMA (Computational Analysis and Modelling  of Medical Activities) based in Strasbourg, France. The goal of the internship was to develop augmented/mixed reality applications for teaching radiation safety in a Hybrid operating room. 
+I developed a set of apps for Microsoft Hololens during a 3 months internship at research group CAMMA (Computational Analysis and Modelling  of Medical Activities) based in Strasbourg, France. The goal of the internship was to develop augmented/mixed reality applications for teaching radiation safety in a Hybrid operating room. Our work was accepted for a presentation at European Congress of Radiology, 2018. 
 ​
 Applications were developed under two categories:
 a. Augmented/Mixed reality
@@ -58,9 +58,9 @@ Development work included custom shader development for volume rendering, wirele
 
 <h2>Computer Vision Toolbox - (C++ & OpenCV3.2) and (MATLAB)</h2>
 ![CVToolbox](/assets/projects_portfolio/seeWithCpp.png){:class="img-responsive"}
-The C++ and MATLAB toolboxes are collection of classes and functions respectively on top of which GUIs were built, that allowed the user to perform processing on single images, as well as on (stereo) pair of images, including camera calibration using multiple images.
+The C++ and MATLAB toolboxes are (independent) collection of classes and functions on top of which GUIs were built, that allowed the user to perform image processing on single images, feature matching on (stereo) pair of images, and camera calibration using multiple images.
 ​
-The C++ toolbox was built using OpenCV 3.2. I used a Model-View-Controller (MVC) pattern to design the application. All methods in the toolbox were implemented as encapsulated algorithms, in order to maximize scope of future reusability.<br>
+The C++ toolbox was built using OpenCV 3.2. I used a Model-View-Controller (MVC) pattern to design the application. All methods in the C++ toolbox were implemented as encapsulated algorithms to make them easy to use.<br>
 
 [> GitHub Repo : C++ toolbox](https://github.com/PamirGhimire/seeWithCpp){:target="_blank"}<br>
 [> GitHub Repo : MATLAB toolbox](https://github.com/PamirGhimire/seeWithMatlab_cppParallel){:target="_blank"}<br>
@@ -84,10 +84,10 @@ computing cross-sectional area and volume information. It is also possible to as
 ![ArduinoDisplay](/assets/projects_portfolio/ledDisplay.jpg){:class="img-responsive"}
 This is a 4 digit display that uses four seven-segment displays and four shift registers. It also has a buzzer. It is controlled by an arduino uno. 
  
-I am solely responsible for all pieces of the project, including but not limited to, hardware layout design and assembly, character design and tone design for the buzzer.
+This was a solo summer-holiday project during which I designed the hardware layout, worked on the assembly of the board, character design in Arduino for the display and tone design for the buzzer.
  
-The link below will take you to a video that I had created to document this project. 
-You'll need to pause the video to read the texts that appear in between clips. They are a little hard to make out.<br>
+The link below will take you to a video that I created to document this project. 
+You'll need to pause the video to read the texts that appear in between clips.<br>
 
 [> Video: Demo of the display](https://www.youtube.com/watch?v=sUaXQ-YNJ3k){:target="_blank"}<br>
 
@@ -107,9 +107,9 @@ The controlled variable is the current through the electromagnet which is active
 
 <h2>Distance label predictor</h2>
 ![DistanceFromImagePredictor](/assets/projects_portfolio/distanceFromImage.gif){:class="img-responsive"}<br>
-Problem: Given an image of a blob on a white chart paper, predict the distance label from which the image was taken.
+This was an undergraduate project to predict the distance label (discrete distance) from which the image was taken using only one image (of a paper with an expected pattern).
  
-Proposed solution: Take a set of images from different distance labels (distances corresponding to labels 1, 2, 3…). For each image, make a note of the distance label from which it was taken. Using these images and distance labels, develop an algorithm that learns the relation between (the information in) the images and their corresponding distance labels. Once the relation has been learned by the algorithm, use it to predict the distance labels of future images. <br>
+My method: Take a set of images from different distance labels (distances corresponding to labels 1, 2, 3…). For each image, make a note of the distance label from which it was taken. Using these images and distance labels, fit a linear model that encodes the relation between the images and their corresponding distance labels. Once the relation has been 'learned' by the model, use it to predict the distance labels of images not seen during training. <br>
 
 [> Technical Report](https://drive.google.com/file/d/0ByxKumFMxsMAQmlHMjNJT3JuaTg/view){:target="_blank"}<br>
 
@@ -117,6 +117,6 @@ Proposed solution: Take a set of images from different distance labels (distance
 
 <h2>Proximity Detector</h2>
 ![DistanceFromImagePredictor](/assets/projects_portfolio/proximityDetector.gif){:class="img-responsive"}<br>
-A simple proximity made using spare parts from the levitator project. 
+A simple proximity made using spare parts from the levitator project. The intensity of the LED is a function of the intensity of light reflected to a nearby LDR (photo-resistance) by a nearby object. 
 
 [> Circuit diagram and layout](https://drive.google.com/file/d/0ByxKumFMxsMAU3haYWNSVDR5RGM/view){:target="_blank"}<br>
