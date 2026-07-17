@@ -1,3 +1,19 @@
+# Jekyll build output and caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
 .sass-cache/
-_site
+
+# Local Ruby dependencies
+.bundle/
+vendor/bundle/
+
+# Generated JavaScript
 js/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~

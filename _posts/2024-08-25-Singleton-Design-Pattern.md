@@ -1,5 +1,6 @@
 ---
 layout: post
+published: false
 title:  "Singleton Design pattern"
 author: Pamir Ghimire
 date:   2024-08-25 21:38:37 +0200

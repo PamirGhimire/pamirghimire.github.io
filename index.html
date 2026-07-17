@@ -2,12 +2,56 @@
 layout: default
 ---
 
-<div class="header">
-  <h4>
-    <p><span style="font-family:comic sans ms,cursive;"><strong><em>
-      How can technology make lives better in cities of tomorrow ?&nbsp;
-    </em></strong></span></p>
-  </h4>
-  <img  src="assets/digital_city.png" alt="VisionIndex" style="width: 1800px;"/>
-  <small>iStock/maxsattana </small>
-</div>
+<section class="hero">
+  <p class="eyebrow">Software.Systems.AI</p>
+  <h1>Software for <span>complex real-world systems</span> in large organisations.</h1>
+  <p class="hero-copy">Hi, I’m Pamir. I work as a software architect for advanced driving assistance systems at one of the leading German OEMs. I have held several roles in the Automotive software space in my more than 7 years of working in it, from development and integration to project management. My interests lie in software design, algorithms, AI, applied mathematics, and teamwork.</p>
+  <div class="hero-actions">
+    <a class="button button-primary" href="{{ '/writing/' | relative_url }}">Read my writing <span aria-hidden="true">→</span></a>
+    <a class="button button-secondary" href="{{ '/about/' | relative_url }}">More about me</a>
+  </div>
+</section>
+
+<section class="section expertise">
+  <div><p class="eyebrow">What I work on</p><h2>Architecture, integration, and development</h2></div>
+  <div class="expertise-list">
+    <div><span>01</span><h3>Software architecture</h3><p>ADAS interfaces, control flow, state and error management, requirements, and architecture decisions involving performance and functional-safety considerations.</p></div>
+    <div><span>02</span><h3>Integration and runtime</h3><p>Integrating software on Linux, QNX, and Adaptive AUTOSAR platforms, with hands-on work in startup, communication, profiling, and runtime analysis.</p></div>
+    <div><span>03</span><h3>C/C++ development</h3><p>More than five years of professional C++ experience, including autonomous-driving software, numerical applications, and certification-relevant embedded software.</p></div>
+  </div>
+</section>
+
+<section class="section writing-preview">
+  <div class="section-heading"><div><p class="eyebrow">Notes &amp; articles</p><h2>Recent writing</h2></div><a class="text-link" href="{{ '/writing/' | relative_url }}">View all writing →</a></div>
+  <div class="article-list">
+    {% for post in site.posts limit:3 %}
+    <a href="{{ post.url | relative_url }}"><time>{{ post.date | date: "%Y · %b %-d" }}</time><h3>{{ post.title }}</h3><span aria-hidden="true">↗</span></a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section selected-work">
+  <div class="section-heading">
+    <div><p class="eyebrow">Selected early work</p><h2>Earlier work in computer vision, robotics, and imaging.</h2></div>
+    <a class="text-link" href="{{ '/early-work/' | relative_url }}">Explore the archive →</a>
+  </div>
+  <p class="section-intro">Before moving into automotive software, I studied computer vision and robotics and worked as a research engineer. I keep these projects here because they show the technical path that led to my current work.</p>
+  <div class="project-grid">
+    <article class="project-card">
+      <a class="project-image" href="{{ '/early-work/' | relative_url }}#augmented-reality-in-image-guided-surgery"><img src="{{ '/assets/projects_portfolio/encov.png' | relative_url }}" alt="Augmented reality image-guided surgery project"></a>
+      <div class="project-body"><p class="project-number">Research engineer · EnCoV Lab</p><h3>Augmented Reality in Image-Guided Surgery</h3><p>C++ software for registering pre-operative CT models with models reconstructed during surgery.</p></div>
+    </article>
+    <article class="project-card">
+      <a class="project-image" href="{{ '/early-work/' | relative_url }}#cross-domain-visual-descriptors"><img src="{{ '/assets/projects_portfolio/cnn_training_msc_thesis.JPG' | relative_url }}" alt="Deep network training visualization"></a>
+      <div class="project-body"><p class="project-number">Master’s thesis · Diota</p><h3>Cross-Domain Visual Descriptors</h3><p>Training a neural network to match rendered images of industrial parts with real images.</p></div>
+    </article>
+    <article class="project-card">
+      <a class="project-image" href="{{ '/early-work/' | relative_url }}#visual-servoing-with-ros"><img src="{{ '/assets/projects_portfolio/visualServoing.png' | relative_url }}" alt="TurtleBot visual servoing simulation"></a>
+      <div class="project-body"><p class="project-number">Master’s coursework · Robotics</p><h3>Visual Servoing with ROS</h3><p>Image- and pose-based control of a TurtleBot using ROS, ViSP, and Gazebo.</p></div>
+    </article>
+    <article class="project-card">
+      <a class="project-image" href="{{ '/early-work/' | relative_url }}#hololens-for-radiation-safety"><img src="{{ '/assets/projects_portfolio/hololens.png' | relative_url }}" alt="HoloLens radiation safety application"></a>
+      <div class="project-body"><p class="project-number">Summer internship · IHU Strasbourg</p><h3>HoloLens for Radiation Safety</h3><p>HoloLens applications showing how X-rays scatter in a hybrid operating room.</p></div>
+    </article>
+  </div>
+</section>
